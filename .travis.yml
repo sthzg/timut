@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '7'
+cache:
+  yarn: true
+  directories:
+  - node_modules
+before_install:
+- yarn add typescript
+script:
+- yarn test
+deploy:
+  provider: npm
+  skip_cleanup: true
+  on:
+    tags: true
+  api_key:
+    secure: r3r0MfDuAFLC59+KnUSv+1cnKgej+JNUvnFyIBcdknc8vXCbTnTcI2J1z4Dy172pgg6n9ybMQmyc5HUj2hLrITB1QXfUsdXkjALD2exkFstoyvWOhUNrzVlGRsGjswe5HVyhXEQXzM8LTBoZeCK3GjesN7srZNHliGe73Fm1FIpCmI6itKTVDAQn6ynkAkLK2eyojcVFGflOlQnCYUOo6vFB5CN4XJg6sLlrFCYytDPEeUuSY89e60RhzkHOCs5Z/6jriVVOjhV0qRoZMbROIn87gjRC9S67+Jl5LaFemSguyuSV12G2dimc0AVy1C6ppVEu7PgHwAmyRCC1vwRgnR/fo2oP2tIn3GQbZjUWlLlZrd/gXlzGML9ttvFrqymq8XCGJ8cRDMz6ECcXaTz5ePzwodFLzHNPNsmRYvJwESi0HpEtg6K6bCUFuUnJo6sksJr0IVcWzIGB5XeD2nyhHZNhK6B/lItbYh9zqGNSSX+z2w+GG9sjNNOHYknWF3qQUFqEtipguDWJo5ZdfsYjCQ/XbgoFAyUPDQ4V4CCbIv6MHs6BwofloS6RK3sqTz++GTHXhtC36Er2ydOohBSIgVV/iB0jTEV9AUYKbvX9JL6xtGjo4aOl4ByrSDGFcNoeFca2mhNVpF2tmIbTSAjGE0KcmffJJV5o4l0zXGmqS3Q=

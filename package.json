@@ -1,0 +1,29 @@
+{
+  "name": "timut",
+  "version": "0.0.1-alpha.1",
+  "description": "Timing utils for Javascript",
+  "main": "es2015/index.js",
+  "typings": "es2015/index.d.ts",
+  "repository": "git@github.com:sthzg/timut.git",
+  "author": "Stephan Herzog <sthzgvie@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.0.0",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.31",
+    "@types/sinon": "^2.3.1",
+    "@types/sinon-chai": "^2.7.28",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.4",
+    "sinon-chai": "^2.11.0",
+    "ts-node": "^3.0.6",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register src/**/__tests__/**/*.spec.ts",
+    "build": "tsc -p ./tsconfig.json",
+    "watch": "tsc -p ./tsconfig.json --watch"
+  }
+}
