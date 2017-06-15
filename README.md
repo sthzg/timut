@@ -21,7 +21,7 @@ require('timut').log();
 Time          |  Context     |  Message                                                       |  Rel. Delta  |  Abs. Delta
 --------------------------------------------------------------------------------------------------------------------------
 00:01:01:007  |  default...  |  just a message..............................................  |         0ms  |         0ms
-00:01:05:275  |  default...  |  another message.............................................  |       +12ms  |       +12ms
+00:01:01:019  |  default...  |  another message.............................................  |       +12ms  |       +12ms
 ```
 
 This is not fancy, but sometimes useful as a quicker and less complicated inspection tool than
