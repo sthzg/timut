@@ -1,6 +1,6 @@
 {
   "name": "timut",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "Timing utils for Javascript",
   "main": "es2015/index.js",
   "typings": "es2015/index.d.ts",
