@@ -10,14 +10,14 @@ const { TimingEvent } = Store;
  */
 
 /**
- * Removes all events.
+ * Removes all events from the log store.
  */
 export function reset(): void {
   Store.reset();
 }
 
 /**
- * Removes events with `context`.
+ * Removes events with `context` from the log store.
  */
 export function resetContext(context: string): void {
   Store.resetByContext(context);
@@ -25,6 +25,10 @@ export function resetContext(context: string): void {
 
 /**
  * Pushes new timing event into the store.
+ *
+ * @param message log message
+ * @param [context=default] context for the message
+ * @param [datetime=Date] event time
  */
 export function push(
   message: string = '',
@@ -36,6 +40,10 @@ export function push(
 
 /**
  * Logs timing table for `context` to console.
+ *
+ * @param [context=default] context for the message
+ * @param [startWithNewline=false] append \n before log output
+ * @param [endWithNewline=false] prepend \n after log output
  */
 export function log(
   context: string = 'default',
@@ -49,6 +57,8 @@ export function log(
 
 /**
  * Logs timing table with newlines at beginning and end.
+ *
+ * @param [context=default] context for the message
  */
 export function logWithNewlines(context: string = 'default'): void {
   Logging.logByContext(context, {startWithNewline: true, endWithNewline: true});

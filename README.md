@@ -18,14 +18,17 @@ require('timut').log();
 `.log()` will output a table including time deltas to the console.
 
 ```
-Time          |  Context     |  Message                                                       |  Rel. Delta  |  Abs. Delta
---------------------------------------------------------------------------------------------------------------------------
-00:01:01:007  |  default...  |  just a message..............................................  |         0ms  |         0ms
-00:01:01:019  |  default...  |  another message.............................................  |       +12ms  |       +12ms
+Time          |  Context     |  Message               |  Rel. Delta  |  Abs. Delta
+----------------------------------------------------------------------------------
+00:01:01:007  |  default...  |  just a message......  |         0ms  |         0ms
+00:01:01:019  |  default...  |  another message.....  |       +12ms  |       +12ms
 ```
 
 This is not fancy, but sometimes useful as a quicker and less complicated inspection tool than
 full-blown profilers.
+
+The `require('timut')` syntax is recommended, as it easily allows simple `sed` commands to remove all 
+occurrences in the complete codebase.
 
 ## API
 
