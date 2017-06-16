@@ -1,11 +1,13 @@
 # Timut
 
+[![npm version](https://badge.fury.io/js/timut.svg)](https://badge.fury.io/js/timut)
+
 > Simple timing utils for a poor man's toolbox.
  
  ## Install
  
  ```bash
-yarn add --dev timut@v0.0.1-alpha.2 # npm install --save-dev timut@v0.0.1-alpha.2
+yarn add --dev timut@next # npm install --save-dev timut@next
 ```
  
  
@@ -49,6 +51,12 @@ require('timut').push('another context', 'foo'); // pushes to context `foo`
 
 // .log() takes an optional argument to log a context
 require('timut').log('foo'); // logs all messages in context `foo`
+
+// to remove all entries for a context
+require('timut').resetContext('foo');
+
+// or to reset all contexts
+require('timut').reset();
 ```
 
 ## Library Target
