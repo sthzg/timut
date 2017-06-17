@@ -18,7 +18,6 @@
     "no-require-imports": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
-    "no-unused-variable": [true, "react"],
     "object-literal-sort-keys": false,
     "only-arrow-functions": [true, "allow-declarations"],
     "ordered-imports": [false],

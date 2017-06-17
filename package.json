@@ -2,8 +2,24 @@
   "name": "timut",
   "version": "0.0.1-alpha.5",
   "description": "Timing utils for Javascript",
-  "main": "es2015/index.js",
-  "typings": "es2015/index.d.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "dist",
+    "es",
+    "lib",
+    "src"
+  ],
+  "npmName": "timut",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
   "repository": "git@github.com:sthzg/timut.git",
   "author": "Stephan Herzog <sthzgvie@gmail.com>",
   "license": "MIT",
@@ -13,8 +29,17 @@
     "@types/node": "^7.0.31",
     "@types/sinon": "^2.3.1",
     "@types/sinon-chai": "^2.7.28",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^4.0.2",
+    "cross-env": "^5.0.1",
     "mocha": "^3.4.2",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
     "sinon": "^2.3.4",
     "sinon-chai": "^2.11.0",
     "ts-node": "^3.0.6",
@@ -22,9 +47,17 @@
     "typescript": "^2.3.4"
   },
   "scripts": {
+    "clean": "rimraf lib dist es",
+    "tslint": "tslint -c ./tslint.json -p tsconfig.json",
     "test": "mocha -r ts-node/register src/**/__tests__/**/*.spec.ts",
-    "build": "tsc -p ./tsconfig.json",
+    "build:commonjs": "tsc -p ./tsconfig.json --outDir ./lib --module commonjs --target es5",
+    "build:es": "tsc -p ./tsconfig.json --outDir ./es --module es2015 --target es2015",
+    "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c -i es/index.js -o dist/timut.js",
+    "build:umd:min": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c -i es/index.js -o dist/timut.min.js",
+    "build": "yarn build:es && yarn build:commonjs && yarn run build:umd && yarn run build:umd:min",
     "watch": "tsc -p ./tsconfig.json --watch",
-    "prerelease": "yarn publish --tag next"
+    "prepublish": "yarn run clean && yarn tslint && yarn test && yarn build",
+    "prerelease": "yarn publish --tag next",
+    "release": "yarn publish --tag latest"
   }
 }
