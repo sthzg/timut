@@ -1,54 +1,17 @@
 {
   "compilerOptions": {
-    /* Basic Options */
-    "target": "es2015",
-    "module": "commonjs",
     "lib": [
       "dom",
       "es2015"
     ],
-    // "allowJs": true,
-    // "checkJs": true,
-    // "jsx": "preserve",
     "declaration": true,
     "sourceMap": true,
-    // "outFile": "./",
-    "outDir": "es2015",
     "rootDir": "src",
-    // "removeComments": true,
-    // "noEmit": true,
-    // "importHelpers": true,
-    //     "downlevelIteration": true,
-    // "isolatedModules": true,
-
-    /* Strict Type-Checking Options */
     "strict": true,
-    // "noImplicitAny": true,
-    // "strictNullChecks": true,
-    // "noImplicitThis": true,
-    // "alwaysStrict": true,
-
-    /* Additional Checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    /* Module Resolution Options */
-    // "moduleResolution": "node",
-    // "baseUrl": "./",
-    // "paths": {},
-    // "rootDirs": [],
-    // "typeRoots": [],
-    // "types": [],
-    // "allowSyntheticDefaultImports": true,
-
-    /* Source Map Options */
-    // "sourceRoot": "./",
-    // "mapRoot": "./",
-    // "inlineSourceMap": true,
-    // "inlineSources": true,
-
-    /* Experimental Options */
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },

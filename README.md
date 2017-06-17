@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/timut.svg)](https://badge.fury.io/js/timut)
 
-> Simple timing utils for a poor man's toolbox.
+> Simple timing utils for the poor man's toolbox.
  
  ## Install
  
@@ -59,10 +59,11 @@ require('timut').resetContext('foo');
 require('timut').reset();
 ```
 
-## Library Target
+## Library Targets
 
-The library can be used in ES2015-environments (e.g. Babel) and Typescript. Providing an ES5-bundle
-is on the todo list.
+- browser (`dist/timut.min.js`)
+- commonjs (`lib/index.js`)
+- es2015 modules (`es/index.js`)
 
 ## API
 
